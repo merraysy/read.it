@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+// data
+import { posts } from './data';
+
+// components
+import Logo from './Logo';
+import Switch from './common/Switch';
+import Post from './Post';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Logo />
+          <Switch
+            leftOption="Light"
+            rightOption="Dark"
+            className="App-header-switch"
+          />
         </header>
+        <main>
+          {posts.map((post) => (
+            <Post
+              key={post.id}
+              {...post}
+            />
+          ))}
+        </main>
       </div>
     );
   }

@@ -1,0 +1,8 @@
+.Logo {
+  color: tomato;
+  font-weight: 300;
+}
+
+.Logo::first-letter {
+  font-weight: 900;
+}
