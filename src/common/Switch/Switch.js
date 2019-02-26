@@ -1,5 +1,45 @@
 import React, { Component } from 'react';
-import './Switch.css';
+
+// styles
+const styles = {
+  switch: {
+    display: 'flex',
+    alignItems: 'center',
+    userSelect: 'none',
+  },
+  option: {
+    fontSize: '1.5vmin',
+    color: 'gray',
+  },
+  rightOption: {
+    marginLeft: 10,
+  },
+  leftOption: {
+    marginRight: 10,
+  },
+  box: {
+    width: 42,
+    height: 22,
+    outline: '1px solid grey',
+    position: 'relative',
+    cursor: 'pointer',
+  },
+  mark: {
+    width: 20,
+    height: 20,
+    position: 'absolute',
+    top: 0,
+    margin: 1,
+  },
+  rightMark: {
+    backgroundColor: 'tomato',
+    right: 0,
+  },
+  leftMark: {
+    backgroundColor: 'tomato',
+    left: 0,
+  },
+};
 
 class Switch extends Component {
   static defaultProps = {
@@ -23,22 +63,45 @@ class Switch extends Component {
       leftOption,
       rightOption,
       className,
+      style,
     } = this.props;
     const isLeft = this.state.activeSide === 'left';
 
     return (
-      <div className={`Switch ${className}`}>
-        <div className="Switch-option">{leftOption}</div>
+      <div
+        className={className}
+        style={{
+          ...styles.switch,
+          ...style,
+        }}
+      >
         <div
-          className="Switch-box"
+          style={{
+          ...styles.option,
+          ...styles.leftOption,
+          }}
+        >
+          {leftOption}
+        </div>
+        <div
+          style={styles.box}
           onClick={this.handleClick}
         >
           <div
-            className={`Switch-mark ${isLeft ? 'left' : 'right'}`}
-            style={isLeft ? { left: 0 } : { right: 0 }}
+            style={{
+              ...styles.mark,
+              ...(isLeft ? styles.leftMark : styles.rightMark),
+            }}
           />
         </div>
-        <div className="Switch-option">{rightOption}</div>
+        <div
+          style={{
+            ...styles.option,
+            ...styles.rightOption,
+          }}
+        >
+          {rightOption}
+        </div>
       </div>
     );
   }

@@ -1,7 +1,4 @@
-.Logo {
-  color: tomato;
-  font-weight: 300;
-}
+/* Implementing these simple CSS rules would be a lot of pain */
 
 .Logo::first-letter {
   font-weight: 900;

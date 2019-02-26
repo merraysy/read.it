@@ -1,8 +1,45 @@
 import React, { Component } from 'react';
-import './Post.css';
 
 // components
 import Switch from '../common/Switch';
+
+// styles
+const styles = {
+  post: {
+    padding: '20px 0',
+    position: 'relative',
+  },
+  postRead: {
+    opacity: .25,
+  },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '10px',
+  },
+  title: {
+    color: 'tomato',
+    textTransform: 'capitalize',
+    flexGrow: 1,
+    margin: 0,
+  },
+  switch: {
+    marginLeft: 'auto',
+  },
+  author: {
+    margin: 0,
+    fontStyle: 'italic',
+  },
+  excerpt: {
+    color: 'gray',
+  },
+  divider: {
+    width: '30%',
+    borderBottom: '1px solid tomato',
+    position: 'relative',
+    margin: '0 auto',
+  },
+};
 
 class Post extends Component {
   constructor(props) {
@@ -25,19 +62,25 @@ class Post extends Component {
     
     return (
       <>
-        <div className={`Post ${isRead && 'read'}`}>
-          <header className="Post-header">
-            <h1 className="Post-title">{title}</h1>
+        <div
+          className={`Post ${isRead && 'read'}`}
+          style={{
+            ...styles.post,
+            ...(isRead && styles.postRead),
+          }}
+        >
+          <header style={styles.header}>
+            <h1 style={styles.title}>{title}</h1>
             <Switch
               leftOption={isRead ? 'Unread' : 'Read'}
               onChange={this.toggleRead}
-              className="Post-switch"
+              style={styles.switch}
             />
           </header>
-          <h5 className="Post-author">{author}</h5>
-          <p className="Post-excerpt">{excerpt}</p>
+          <h5 style={styles.author}>{author}</h5>
+          <p style={styles.excerpt}>{excerpt}</p>
         </div>
-        <div className="Post-divider" />
+        <div style={styles.divider} />
       </>
     );
   }

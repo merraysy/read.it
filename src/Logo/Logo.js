@@ -1,8 +1,13 @@
 import React from 'react';
-import './Logo.css';
+
+// style
+const style = {
+  color: 'tomato',
+  fontWeight: 300,
+};
 
 export default function Logo() {
   return (
-    <h2 className="Logo">Read.it</h2>
+    <h2 style={style}>Read.it</h2>
   );
 }

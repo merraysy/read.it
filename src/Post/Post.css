@@ -1,53 +1,13 @@
-.Post {
-  padding: 20px 0;
-  position: relative;
-}
+/* Implementing these simple CSS rules would be a lot of pain */
 
 .Post-divider:last-of-type {
   display: none;
-}
-
-.Post.read {
-  opacity: .25;
-}
-
-.Post-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.Post-title {
-  color: tomato;
-  text-transform: capitalize;
-  flex-grow: 1;
-  margin: 0;
-}
-
-.Post-author {
-  margin: 0;
-  font-style: italic;
-}
-
-.Post-excerpt {
-  color: gray;
 }
 
 .Post-excerpt::first-letter {
   text-transform: uppercase;
   font-size: 2vmin;
   font-weight: 700;
-}
-
-.Post-divider {
-  width: 30%;
-  border-bottom: 1px solid tomato;
-  position: relative;
-  margin: 0 auto;
-}
-
-.Post-switch {
-  margin-left: auto;
 }
 
 .Post-switch .Switch-mark.left {
