@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './Post.css';
 
 // components
-import Switch from '../common/Switch';
+import Switch from './Switch';
 
 class Post extends Component {
   constructor(props) {

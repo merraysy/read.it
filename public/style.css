@@ -1,0 +1,142 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+/* App */
+.App {
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.App-header {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.App-header-switch {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Logo */
+.Logo {
+  color: tomato;
+  font-weight: 300;
+}
+
+.Logo::first-letter {
+  font-weight: 900;
+}
+
+/* Post */
+.Post {
+  padding: 20px 0;
+  position: relative;
+}
+
+.Post-divider:last-of-type {
+  display: none;
+}
+
+.Post.read {
+  opacity: .25;
+}
+
+.Post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.Post-title {
+  color: tomato;
+  text-transform: capitalize;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.Post-author {
+  margin: 0;
+  font-style: italic;
+}
+
+.Post-excerpt {
+  color: gray;
+}
+
+.Post-excerpt::first-letter {
+  text-transform: uppercase;
+  font-size: 2vmin;
+  font-weight: 700;
+}
+
+.Post-divider {
+  width: 30%;
+  border-bottom: 1px solid tomato;
+  position: relative;
+  margin: 0 auto;
+}
+
+.Post-switch {
+  margin-left: auto;
+}
+
+.Post-switch .Switch-mark.left {
+  background-color: gray;
+}
+
+/* Switch */
+.Switch {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.Switch-option {
+  font-size: 1.5vmin;
+  color: gray;
+}
+
+.Switch-option:first-of-type {
+  margin-right: 10px;
+}
+
+.Switch-option:last-of-type {
+  margin-left: 10px;
+}
+
+.Switch-box {
+  width: 42px;
+  height: 22px;
+  outline: 1px solid grey;
+  position: relative;
+  cursor: pointer;
+}
+
+.Switch-mark {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  margin: 1px;
+}
+
+.Switch-mark.left {
+  background-color: tomato;
+}
+
+.Switch-mark.right {
+  background-color: tomato;
+}
