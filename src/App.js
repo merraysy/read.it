@@ -19,8 +19,7 @@ const GlobalStyles = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${props => props.theme.bgColor};
-    color: ${props => props.theme.textColor};
+    color: gray;
   }
 
   div {

@@ -31,11 +31,10 @@ const PostSwitch = styled(Switch)`
 const Author = styled.h5`
   margin: 0;
   font-style: italic;
+  color: black;
 `;
 
 const Excerpt = styled.p`
-  color: gray;
-
   &::first-letter {
     text-transform: uppercase;
     font-size: 2vmin;
