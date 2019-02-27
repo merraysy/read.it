@@ -6,7 +6,7 @@ import { posts } from './data';
 
 // components
 import Logo from './Logo';
-import Switch from './common/Switch';
+import Switch from './Switch';
 import Post from './Post';
 
 class App extends Component {
