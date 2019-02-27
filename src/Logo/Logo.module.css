@@ -1,8 +1,8 @@
-.Logo {
+.logo {
   color: tomato;
   font-weight: 300;
 }
 
-.Logo::first-letter {
+.logo::first-letter {
   font-weight: 900;
 }

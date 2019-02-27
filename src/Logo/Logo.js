@@ -1,8 +1,10 @@
 import React from 'react';
-import './Logo.css';
+
+// styles
+import styles from './Logo.module.css';
 
 export default function Logo() {
   return (
-    <h2 className="Logo">Read.it</h2>
+    <h2 className={styles.logo}>Read.it</h2>
   );
 }

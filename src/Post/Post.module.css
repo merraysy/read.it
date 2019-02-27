@@ -1,55 +1,56 @@
-.Post {
+.post {
   padding: 20px 0;
   position: relative;
 }
 
-.Post-divider:last-of-type {
+.divider:last-of-type {
   display: none;
 }
 
-.Post.read {
+.post.read {
   opacity: .25;
 }
 
-.Post-header {
+.header {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.Post-title {
+.title {
   color: tomato;
   text-transform: capitalize;
   flex-grow: 1;
   margin: 0;
 }
 
-.Post-author {
+.author {
   margin: 0;
   font-style: italic;
 }
 
-.Post-excerpt {
+.excerpt {
   color: gray;
 }
 
-.Post-excerpt::first-letter {
+.excerpt::first-letter {
   text-transform: uppercase;
   font-size: 2vmin;
   font-weight: 700;
 }
 
-.Post-divider {
+.divider {
   width: 30%;
   border-bottom: 1px solid tomato;
   position: relative;
   margin: 0 auto;
 }
 
-.Post-switch {
+.switch {
   margin-left: auto;
 }
 
-.Post-switch .Switch-mark.left {
+/* TODO:: build a switch theme */
+.switch .mark.left {
   background-color: gray;
 }

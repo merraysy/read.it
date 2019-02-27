@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import './Post.css';
+import classNames from 'classnames';
+
+// styles
+import styles from './Post.module.css';
 
 // components
 import Switch from '../common/Switch';
@@ -25,19 +28,24 @@ class Post extends Component {
     
     return (
       <>
-        <div className={`Post ${isRead && 'read'}`}>
-          <header className="Post-header">
-            <h1 className="Post-title">{title}</h1>
+        <div
+          className={classNames(
+            styles.post,
+            { [styles.read]: isRead },
+          )}
+        >
+          <header className={styles.header}>
+            <h1 className={styles.title}>{title}</h1>
             <Switch
               leftOption={isRead ? 'Unread' : 'Read'}
               onChange={this.toggleRead}
-              className="Post-switch"
+              className={styles.switch}
             />
           </header>
-          <h5 className="Post-author">{author}</h5>
-          <p className="Post-excerpt">{excerpt}</p>
+          <h5 className={styles.author}>{author}</h5>
+          <p className={styles.excerpt}>{excerpt}</p>
         </div>
-        <div className="Post-divider" />
+        <div className={styles.divider} />
       </>
     );
   }

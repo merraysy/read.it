@@ -1,17 +1,17 @@
-.App {
+.app {
   max-width: 700px;
   padding: 20px;
   margin: 0 auto;
 }
 
-.App-header {
+.header {
   padding: 10px 0;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.App-header-switch {
+.switch {
   margin-left: auto;
   display: flex;
   justify-content: flex-end;

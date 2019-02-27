@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+
+// styles
+import styles from './App.module.css';
 
 // data
 import { posts } from './data';
@@ -12,13 +14,13 @@ import Post from './Post';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className={styles.app}>
+        <header className={styles.header}>
           <Logo />
           <Switch
             leftOption="Light"
             rightOption="Dark"
-            className="App-header-switch"
+            className={styles.switch}
           />
         </header>
         <main>

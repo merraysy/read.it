@@ -1,0 +1,3 @@
+- Convert the `Switch` component
+- Make it themable
+- Create a theme for the instances used in  `App` and `Post` components

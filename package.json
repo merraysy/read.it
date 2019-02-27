@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "faker": "^4.1.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.3",
+    "react-css-themr": "^2.1.2",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
   },
