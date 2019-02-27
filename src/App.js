@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components/macro';
+import styled, { css, createGlobalStyle } from 'styled-components/macro';
 
 // data
 import { posts } from './data';
@@ -10,6 +10,24 @@ import Switch from './common/Switch';
 import Post from './Post';
 
 // styled
+const GlobalStyles = createGlobalStyle`
+  ${css`${require('normalize.css/normalize.css')}`}
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: ${props => props.theme.bgColor};
+    color: ${props => props.theme.textColor};
+  }
+
+  div {
+    box-sizing: border-box;
+  }
+`;
+
 const Wrapper = styled.div`
   max-width: 700px;
   padding: 20px;
@@ -30,23 +48,26 @@ const HeaderSwitch = styled(Switch)`
 class App extends Component {
   render() {
     return (
-      <Wrapper>
-        <Header>
-          <Logo />
-          <HeaderSwitch
-            leftOption="Light"
-            rightOption="Dark"
-          />
-        </Header>
-        <main>
-          {posts.map((post) => (
-            <Post
-              key={post.id}
-              {...post}
+      <>
+        <GlobalStyles />
+        <Wrapper>
+          <Header>
+            <Logo />
+            <HeaderSwitch
+              leftOption="Light"
+              rightOption="Dark"
             />
-          ))}
-        </main>
-      </Wrapper>
+          </Header>
+          <main>
+            {posts.map((post) => (
+              <Post
+                key={post.id}
+                {...post}
+              />
+            ))}
+          </main>
+        </Wrapper>
+      </>
     );
   }
 }
