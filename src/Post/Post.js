@@ -1,8 +1,58 @@
 import React, { Component } from 'react';
-import './Post.css';
+import styled from 'styled-components/macro';
 
 // components
 import Switch from '../common/Switch';
+
+// styled
+const Wrapper = styled.div`
+  padding: 20px 0;
+  position: relative;
+  opacity: ${props => props.read ? .25 : 1};
+`;
+
+const Header = styled.header`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+const Title = styled.h1`
+  color: tomato;
+  text-transform: capitalize;
+  flex-grow: 1;
+  margin: 0;
+`;
+
+const PostSwitch = styled(Switch)`
+  margin-left: auto;
+`;
+
+const Author = styled.h5`
+  margin: 0;
+  font-style: italic;
+`;
+
+const Excerpt = styled.p`
+  color: gray;
+
+  &::first-letter {
+    text-transform: uppercase;
+    font-size: 2vmin;
+    font-weight: 700;
+  }
+`;
+
+const Divider = styled.div`
+  width: 30%;
+  border-bottom: 1px solid tomato;
+  position: relative;
+  margin: 0 auto;
+
+  &:last-of-type {
+    display: none;
+  }
+`;
 
 class Post extends Component {
   constructor(props) {
@@ -25,19 +75,18 @@ class Post extends Component {
     
     return (
       <>
-        <div className={`Post ${isRead && 'read'}`}>
-          <header className="Post-header">
-            <h1 className="Post-title">{title}</h1>
-            <Switch
+        <Wrapper read={isRead}>
+          <Header>
+            <Title>{title}</Title>
+            <PostSwitch
               leftOption={isRead ? 'Unread' : 'Read'}
               onChange={this.toggleRead}
-              className="Post-switch"
             />
-          </header>
-          <h5 className="Post-author">{author}</h5>
-          <p className="Post-excerpt">{excerpt}</p>
-        </div>
-        <div className="Post-divider" />
+          </Header>
+          <Author>{author}</Author>
+          <Excerpt>{excerpt}</Excerpt>
+        </Wrapper>
+        <Divider />
       </>
     );
   }

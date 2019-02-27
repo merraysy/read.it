@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styled from 'styled-components/macro';
 
 // data
 import { posts } from './data';
@@ -9,18 +9,35 @@ import Logo from './Logo';
 import Switch from './common/Switch';
 import Post from './Post';
 
+// styled
+const Wrapper = styled.div`
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+`;
+
+const Header = styled.div`
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+const HeaderSwitch = styled(Switch)`
+  margin-left: auto;
+`;
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <Wrapper>
+        <Header>
           <Logo />
-          <Switch
+          <HeaderSwitch
             leftOption="Light"
             rightOption="Dark"
-            className="App-header-switch"
           />
-        </header>
+        </Header>
         <main>
           {posts.map((post) => (
             <Post
@@ -29,7 +46,7 @@ class App extends Component {
             />
           ))}
         </main>
-      </div>
+      </Wrapper>
     );
   }
 }

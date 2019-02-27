@@ -1,8 +1,18 @@
 import React from 'react';
-import './Logo.css';
+import styled from 'styled-components/macro';
+
+// styled
+const H2 = styled.h2`
+  color: tomato;
+  font-weight: 300;
+
+  &::first-letter {
+    font-weight: 900;
+  }
+`;
 
 export default function Logo() {
   return (
-    <h2 className="Logo">Read.it</h2>
+    <H2>Read.it</H2>
   );
 }
